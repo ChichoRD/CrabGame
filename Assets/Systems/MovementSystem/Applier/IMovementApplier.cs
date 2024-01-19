@@ -5,6 +5,6 @@ namespace MovementSystem.Applier
 {
     public interface IMovementApplier
     {
-        Task<bool> TryApplyMovement(Rigidbody2D rigidbody);
+        bool TryApplyMovement(Rigidbody2D rigidbody);
     }
 }

@@ -6,21 +6,24 @@ using UnityEngine;
 
 namespace MovementSystem.Applier
 {
-    internal class PlanarMovementApplier : MonoBehaviour//, IMovementApplier
+    internal class PlanarMovementApplier : MonoBehaviour, IMovementApplier
     {
-        //private IInputService _inputService;
-        //private IInputReadable<Vector2> _inputReadable;
-        //private IMovementPerformer<Vector2> _movementPerformer;
+        private IMovementPerformer<Vector2> _movementPerformer;
+        private IInputReadable<Vector2> _input;
+        private IInputService _inputService;
 
-        //private void Awake()
-        //{
-        //    _inputService = GetComponentInChildren<IInputService>();
-        //    _movementPerformer = GetComponentInChildren<IMovementPerformer<Vector2>>();
+        public bool TryApplyMovement(Rigidbody2D rigidbody)
+        {
+            return _movementPerformer.TryPerformMovement(rigidbody, _input.Get()); 
+        }
 
-        //    _inputService.TryGet(out _inputReadable);
-        //}
+        private void Awake()
+        {
+            _movementPerformer = GetComponentInChildren<IMovementPerformer<Vector2>>();
+            _inputService = GetComponentInChildren<IInputService>();
+            _inputService.TryGet(out _input);
+        }
 
-        //public Task<bool> TryApplyMovement(Rigidbody2D rigidbody) =>
-        //    Task.FromResult(_movementPerformer.TryPerformMovement(rigidbody, _inputReadable.Get()));
+         
     }
 }

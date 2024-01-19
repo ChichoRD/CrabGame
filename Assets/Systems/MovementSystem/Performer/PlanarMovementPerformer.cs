@@ -13,7 +13,6 @@ namespace MovementSystem.Performer
 
             rigidbody.AddForce(finalspeed * rigidbody.mass / Time.fixedDeltaTime);
             return true;
-
         }
 
 
