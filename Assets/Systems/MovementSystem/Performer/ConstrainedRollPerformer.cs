@@ -1,5 +1,5 @@
-﻿using MovementSystem.Performer;
-using System.Diagnostics;
+﻿using System.Diagnostics;
+using System.Linq;
 using UnityEngine;
 
 namespace MovementSystem.Performer
@@ -8,7 +8,7 @@ namespace MovementSystem.Performer
     {
         private IMovementPerformer<Vector2> _rollPerformer;
         [SerializeField] private float _rollCoolDown;
-        private Stopwatch _stopwatch = new Stopwatch();
+        private readonly Stopwatch _stopwatch = new Stopwatch();
         
         public bool TryPerformMovement(Rigidbody2D rigidbody, Vector2 input)
         {
@@ -25,20 +25,8 @@ namespace MovementSystem.Performer
         private void Awake()
         {
             _stopwatch.Start();
-
-            IMovementPerformer<Vector2>[] performers = GetComponentsInChildren<IMovementPerformer<Vector2>>();
-
-            int i = 0;
-            bool performerFound = false;
-
-            while (i < performers.Length && !performerFound) 
-            {
-                if (performers[i] != (IMovementPerformer<Vector2>)this)
-                {
-                    _rollPerformer = performers[i];
-                    performerFound = true;
-                }
-            }
+            _rollPerformer = GetComponentsInChildren<IMovementPerformer<Vector2>>()
+                .FirstOrDefault(p => p != (IMovementPerformer<Vector2>)this);
         }
     }
 }
