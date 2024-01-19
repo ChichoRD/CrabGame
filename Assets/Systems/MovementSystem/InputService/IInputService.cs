@@ -1,9 +1,9 @@
-using InputBox.Readable;
+using UnityEngine;
 
 namespace MovementSystem.InputService
 {
-    public interface IInputService
+    public interface IInputService<out TInput>
     {
-        bool TryGet<TInput>(out IInputReadable<TInput> inputReadable);
+        TInput GetInput();
     }
 }

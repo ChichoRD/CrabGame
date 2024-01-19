@@ -1,27 +1,13 @@
-﻿using InputBox.Readable;
-using InputBox.Writeable;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace MovementSystem.InputService.PlayerInputted
 {
-    internal class TontoPlanarInputService : MonoBehaviour, IInputService
+    internal class TontoPlanarInputService : MonoBehaviour, IInputService<Vector2>
     {
-        private IInputWriteable<Vector2> _inputWriteable;
-
-        public bool TryGet<TInput>(out IInputReadable<TInput> inputReadable)
+        public Vector2 GetInput()
         {
-            inputReadable = GetComponentInChildren<IInputReadable<TInput>>();
-            return (inputReadable != null);
+            return Vector2.right;
         }
 
-        private void Update()
-        {
-            _inputWriteable.TrySet(Vector2.right);
-        }
-
-        private void Awake()
-        {
-            _inputWriteable = GetComponentInChildren<IInputWriteable<Vector2>>();
-        }
     }
 }
