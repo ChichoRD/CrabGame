@@ -3,8 +3,16 @@ using UnityEngine;
 
 namespace MovementSystem.Performer
 {
-    internal class ParabolicJumpPerformer : MonoBehaviour, IMovementPerformer<Vector3>
+    internal class ParabolicJumpPerformer : MonoBehaviour, IMovementPerformer<Vector3>, IMovementPerformer<Vector2>
     {
+        [SerializeField]
+        [Min(0.0f)]
+        private float _jumpDistance = 2.0f;
+
+        [SerializeField]
+        [Min(0.0f)]
+        private float _jumpTime = 1.0f;
+
         [SerializeField]
         private Matrix4x4 _jumpTransformation = Matrix4x4.identity;
 
@@ -12,6 +20,11 @@ namespace MovementSystem.Performer
 
         public bool TryPerformMovement(Rigidbody2D rigidbody, Vector3 input) =>
             TryStartJumpCoroutine(rigidbody, input);
+
+        public bool TryPerformMovement(Rigidbody2D rigidbody, Vector2 input) =>
+            TryStartJumpCoroutine(
+                rigidbody,
+                GetVerticalVelocityIncrement() + GetHorizontalVelocityIncrement(new Vector3(input.x, 0.0f, input.y)));
 
         private bool TryStartJumpCoroutine(Rigidbody2D rigidbody, Vector3 jumpVelocityIncrement)
         {
@@ -54,5 +67,8 @@ namespace MovementSystem.Performer
 
             _jumpCoroutine = null;
         }
+
+        private Vector3 GetVerticalVelocityIncrement() => _jumpTime * 0.5f * -Physics2D.gravity;
+        private Vector3 GetHorizontalVelocityIncrement(Vector3 direction) => (_jumpDistance / _jumpTime) * direction;
     }
 }

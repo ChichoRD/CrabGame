@@ -1,7 +1,6 @@
 ﻿using InputBox.Readable;
 using MovementSystem.InputService;
 using MovementSystem.Performer;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace MovementSystem.Applier
