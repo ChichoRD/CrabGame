@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 namespace MovementSystem.InputService.PlayerInputted
 {
-    internal class PlayerInputtedPlanarInputService : MonoBehaviour, IInputService
+    internal class PlayerInputtedPlanarInputService : MonoBehaviour//, IInputService
     {
         //[SerializeField]
         //private InputActionReference _planarMovementActionReference;

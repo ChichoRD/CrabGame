@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace MovementSystem.Applier
 {
-    internal class PlanarMovementApplier : MonoBehaviour, IMovementApplier
+    internal class PlanarMovementApplier : MonoBehaviour//, IMovementApplier
     {
         //private IInputService _inputService;
         //private IInputReadable<Vector2> _inputReadable;
