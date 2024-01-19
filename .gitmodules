@@ -1,3 +1,6 @@
 [submodule "Assets/Systems/Input-Box"]
 	path = Assets/Systems/Input-Box
 	url = https://github.com/ChichoRD/Input-Box.git
+[submodule "Assets/Systems/Agnostic-Physics"]
+	path = Assets/Systems/Agnostic-Physics
+	url = https://github.com/ChichoRD/Agnostic-Physics.git
