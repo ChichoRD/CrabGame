@@ -19,7 +19,5 @@ namespace MovementSystem.Applier
             _movementPerformer = GetComponentInChildren<IMovementPerformer<Vector2>>();
             _inputService = GetComponentInChildren<IInputService<Vector2>>();
         }
-
-         
     }
 }
