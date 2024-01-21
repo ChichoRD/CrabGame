@@ -742,7 +742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _abilityFlyweightSettings:
-  - {fileID: 11400000, guid: 763b4ede0908b9a4b8494098e964f7e7, type: 2}
+  - {fileID: 11400000, guid: 4d76f4c54ae30db4991fb822ab37f1df, type: 2}
 --- !u!1 &1344620890
 GameObject:
   m_ObjectHideFlags: 0
