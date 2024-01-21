@@ -14,5 +14,12 @@ namespace AbilitySystem.Input.Service
         {
             return new Bounds(_boundsOriginTransform.position, _size);
         }
+
+        private void OnDrawGizmosSelected()
+        {
+            Bounds bounds = GetInput();
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireCube(bounds.center, bounds.size);
+        }
     }
 }

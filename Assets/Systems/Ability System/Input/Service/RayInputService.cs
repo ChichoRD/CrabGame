@@ -18,5 +18,15 @@ namespace AbilitySystem.Input.Service
         {
             return new Ray(_rayOriginTransform.position, _abilityInputService.GetInput());
         }
+
+        private void OnDrawGizmosSelected()
+        {
+            if (_abilityInputService == null)
+                return;
+
+            Ray ray = GetInput();
+            Gizmos.color = Color.red;
+            Gizmos.DrawRay(ray.origin, ray.direction);
+        }
     }
 }
