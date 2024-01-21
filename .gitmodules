@@ -1,3 +1,6 @@
 [submodule "Assets/Systems/Agnostic-Physics"]
 	path = Assets/Systems/Agnostic-Physics
 	url = https://github.com/ChichoRD/Agnostic-Physics.git
+[submodule "Assets/Systems/Unity-Save-System"]
+	path = Assets/Systems/Unity-Save-System
+	url = https://github.com/ChichoRD/Unity-Save-System.git
