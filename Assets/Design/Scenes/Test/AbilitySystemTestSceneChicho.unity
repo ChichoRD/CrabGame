@@ -14523,6 +14523,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7009167393466122398, guid: 96137811822954849aadb14bf6737ae4, type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 1.0005559
+      objectReference: {fileID: 0}
+    - target: {fileID: -7009167393466122398, guid: 96137811822954849aadb14bf6737ae4, type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7486846035856672260, guid: 96137811822954849aadb14bf6737ae4, type: 3}
       propertyPath: m_RootOrder
       value: 2
