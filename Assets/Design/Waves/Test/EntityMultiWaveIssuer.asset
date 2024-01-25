@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 109a131f99f034f499d07510e34fd10a, type: 3}
   m_Name: EntityMultiWaveIssuer
   m_EditorClassIdentifier: 
-  _issuers: []
+  _issuers:
+  - {fileID: 11400000, guid: 8ec678b362e93104b86a4a370b443de4, type: 2}
   _loopWaves: 0
   _initialIssuerIndex: 0

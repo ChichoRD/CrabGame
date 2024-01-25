@@ -7,12 +7,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e32bf62027770a408f9ca9c9f435f66, type: 3}
-  m_Name: EntityQuotaWaveIssuer
+  m_Script: {fileID: 11500000, guid: 666484980cde4d24487aa3f205c8f959, type: 3}
+  m_Name: TestAbilityRecipeFlyweightSettings 1
   m_EditorClassIdentifier: 
-  _quotaItems:
-  - <Settings>k__BackingField: {fileID: 0}
-    <Quota>k__BackingField: 1
-  _wave: {fileID: 0}
+  _debugMessage: Brave
