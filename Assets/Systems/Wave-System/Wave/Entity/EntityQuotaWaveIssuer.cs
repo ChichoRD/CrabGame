@@ -21,6 +21,7 @@ namespace WaveSystem.Wave.Entity
 
         private void Awake()
         {
+            _quotaItems ??= new EntityQuotaItem[0];
             _totalQuota = GetQuota(_quotaItems);
             _currentQuota = new Dictionary<EntityFlyweightSettings, int>(_totalQuota);
         }
