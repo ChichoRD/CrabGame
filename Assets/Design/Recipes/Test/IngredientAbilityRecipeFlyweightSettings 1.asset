@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 781e85f1b0265b9408ccb0daf5ca3589, type: 3}
+  m_Name: IngredientAbilityRecipeFlyweightSettings 1
+  m_EditorClassIdentifier: 
+  _ingredientQuotaItems:
+  - <Ingredient>k__BackingField: 8
+    <Quota>k__BackingField: 5
+  - <Ingredient>k__BackingField: 4
+    <Quota>k__BackingField: 5
+  - <Ingredient>k__BackingField: 2
+    <Quota>k__BackingField: 2
+  _abilityRecipeFlyweight: {fileID: 11400000, guid: ab06b42823f8fb74192c9ee775bed4b1, type: 2}
