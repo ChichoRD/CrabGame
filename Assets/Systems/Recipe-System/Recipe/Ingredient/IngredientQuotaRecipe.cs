@@ -17,12 +17,20 @@ namespace RecipeSystem.Recipe.Ingredient
             remove { QuotaReached -= value; }
         }
 
-        public IngredientQuotaRecipe(Dictionary<IngredientType, int> totalQuota, Action onQuotaReached = null)
+        public IngredientQuotaRecipe(Dictionary<IngredientType, int> totalQuota, Action onQuotaReached)
         {
             _totalQuota = totalQuota;
             _currentQuota = new Dictionary<IngredientType, int>(_totalQuota);
 
-            QuotaReached = onQuotaReached ?? (() => { });
+            QuotaReached = onQuotaReached;
+        }
+
+        public IngredientQuotaRecipe(Dictionary<IngredientType, int> totalQuota)
+        {
+            _totalQuota = totalQuota;
+            _currentQuota = new Dictionary<IngredientType, int>(_totalQuota);
+
+            QuotaReached = () => { };
         }
 
         public bool RegisterIngredient(IngredientType ingredient)

@@ -42,7 +42,7 @@ namespace WaveSystem.Wave.Entity
         {
             var quota = new Dictionary<EntityFlyweightSettings, int>();
             foreach (var quotaItem in quotaItems)
-                if (!quota.TryAdd(quotaItem.Settings, quotaItem.Quota))
+                if (quotaItem.Settings != null && !quota.TryAdd(quotaItem.Settings, quotaItem.Quota))
                     quota[quotaItem.Settings] += quotaItem.Quota;
 
             return quota;

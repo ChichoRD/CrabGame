@@ -6,6 +6,10 @@ namespace AbilitySystem.Status.Components
     internal class Health : MonoBehaviour, IHealth
     {
         [SerializeField]
+        private float _initialHealth;
+        [SerializeField]
+        private bool _setInitialHealthOnStart = true;
+
         private float _currentHealth;
         public float CurrentHealth
         {
@@ -19,6 +23,12 @@ namespace AbilitySystem.Status.Components
 
         [field: SerializeField]
         public UnityEvent<float> HealthSet { get; private set; }
+
+        private void Start()
+        {
+            if (_setInitialHealthOnStart)
+                CurrentHealth = _initialHealth;
+        }
 
         public bool TryHeal(float heal)
         {
